@@ -19,12 +19,12 @@ node {
 }
 
     	stage('artifact store'){
-    	    nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus-credentials', groupId: 'in.ashokit', nexusUrl: '15.206.124.74:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mounika-snapshot', version: '1.0-SNAPSHOT'
+    	    nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus-credentials', groupId: 'in.ashokit', nexusUrl: '35.154.190.187:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mounika-snapshot', version: '1.0-SNAPSHOT'
     	}
 
    stage ('Deploy'){
        sshagent(['Tomcat-VM-Credentials']) {
-		sh 'scp -o StrictHostKeyChecking=no target/01-maven-web-app.war ec2-user@13.235.246.216:/home/ec2-user/apache-tomcat-10.0.27/webapps'
+		sh 'scp -o StrictHostKeyChecking=no target/01-maven-web-app.war ec2-user@3.111.168.194:/home/ec2-user/apache-tomcat-10.0.27/webapps'
 	   }
     }	
 }
