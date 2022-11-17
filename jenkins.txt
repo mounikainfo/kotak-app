@@ -19,7 +19,7 @@ node {
 }
 
     	stage('artifact store'){
-    	    nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus-credentials', groupId: 'in.ashokit', nexusUrl: '35.154.190.187:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mounika-snapshot', version: '1.0-SNAPSHOT'
+    	    nexusArtifactUploader artifacts: [[artifactId: '01-maven-web-app', classifier: '', file: 'target/01-maven-web-app.war', type: 'war']], credentialsId: 'nexus-credentials', groupId: 'in.ashokit', nexusUrl: '15.207.107.105:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mounika-snapshot', version: '1.0-SNAPSHOT'
     	}
 
    stage ('Deploy'){
